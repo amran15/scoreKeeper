@@ -9,6 +9,9 @@ const p1Display = document.querySelector('#p1Display');
 //selecting span for player 2 score
 const p2Display = document.querySelector('#p2Display');
 
+//selecting reset button
+const resetButton = document.querySelector('#reset');
+
 
 let p1Score = 0;
 let winningScore = 5;
@@ -35,4 +38,16 @@ p2Button.addEventListener('click', function() {
         }
         p2Display.textContent = p2Score;
     }
+});
+
+//reset score back to 0
+resetButton.addEventListener('click', function() {
+    isGameOver = false;
+    p1Score = 0;
+    p2Score = 0;
+
+    //p1display text captures value of 0 from p1score
+    p1Display.textContent = p1Score;
+     //p2display text captures value of 0 from p2score
+    p2Display.textContent = p2Score;
 })
